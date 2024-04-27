@@ -175,7 +175,7 @@ export default function Header() {
           </div>
           <input
             type='text'
-            maxLength='150'
+            maxLength='1000'
             placeholder='Please enter you caption...'
             className='m-4 border-none text-center w-full focus:ring-0 outline-none'
             onChange={(e) => setCaption(e.target.value)}

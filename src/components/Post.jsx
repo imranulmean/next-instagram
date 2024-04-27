@@ -1,8 +1,12 @@
+'use client'
 import { HiOutlineDotsVertical } from 'react-icons/hi';
 import LikeSection from './LikeSection';
 import CommentSection from './CommentSection';
+import PostDetailsModal from './PostDetails';
+import { useState } from 'react';
 
 export default function Post({ post }) {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className='bg-white my-7 border rounded-md'>
       <div className='flex items-center p-5 border-b border-gray-100'>
@@ -25,6 +29,7 @@ export default function Post({ post }) {
         {post.caption}
       </p>
       <CommentSection id={post.id} />
+      <PostDetailsModal post={post} isOpen={isOpen} setIsOpen={setIsOpen} />
     </div>
   );
 }
